@@ -1,3 +1,10 @@
+/* Reset some default browser styles */
+body, h1, h2, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #f8f9fa;
     font-family: 'Arial', sans-serif;
@@ -6,6 +13,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 10px;
 }
 
 .container {
@@ -15,11 +23,13 @@ body {
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 400px;
 }
 
 .heart {
-    width: 100px;
-    height: 90px;
+    width: 80px;
+    height: 72px;
     background: url('https://i.imgur.com/OAqH9mg.png') no-repeat center center;
     background-size: cover;
     margin: 0 auto;
@@ -37,12 +47,44 @@ body {
 
 h1 {
     color: #ff6b6b;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #555;
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
 }
 
 .message {
-    font-size: 18px;
+    font-size: 1rem;
     color: #555;
     margin: 10px 0;
+}
+
+.gallery {
+    margin: 20px 0;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.1);
 }
 
 button {
@@ -50,10 +92,11 @@ button {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -62,7 +105,29 @@ button:hover {
 
 .hidden {
     display: none;
-    font-size: 20px;
+    font-size: 1.2rem;
     color: #ff6b6b;
     margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 500px;
+    }
+
+    .gallery-container img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 600px;
+    }
+
+    .gallery-container img {
+        width: 140px;
+        height: 140px;
+    }
 }
